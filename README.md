@@ -1,31 +1,68 @@
 # Nivoda GraphQL API
 
+The Nivoda GraphQL API is a public API that can be used by verified Nivoda customers.
+Below are the features, as well as code samples in the most common languages. 
+
+If you are not verified yet, please reach out to your account manager to sign the Nivoda Feed Agreement first.
+
+No rights can be reserved to data in the API. 
+
 ## Features
 
- - Search diamonds
- - Load images and videos
+**Search diamonds**
 
-**PRO Features**
- - PRO - Place Orders
- - PRO - Place Holds
- - PRO - Receive webhook notifications of order updates
+The API contains the same query capabilities as the Nivoda platform and mobile apps. 
 
-## Requirements
+**Images & Videos**
 
-- Nivoda Platform Account
+Videos and images are included where available.
+
+## Pro Features
+
+**Automate requests and orders**
+
+If you are a Nivoda API Pro user, you have the option to place orders, holds, diamond requests and concierge requests through the API. 
+
+**Webhook Notifications**
+
+Receive webhook notifications of order updates & sold out stones.
+
+If you are interested in the Pro features, please reach out to your account manager.
+
+# Getting Started
 
 ## Constants
 
-- Staging URL:
-- Production URL:
+**Staging**
+Endpoint: https://wdc-intg-customer-staging.herokuapp.com
+/api/diamonds
 
-## Code samples:
-- Node.JS 
-- PHP
-- Java
+GraphiQL: https://wdc-intg-customer-staging.herokuapp.com
+/api/diamonds-graphiql
 
-## Placing Orders Examples
+The staging username and password are:
+[TBD]
 
-## Placing Holds Examples
+**Production**
+Endpoint: https://integrations.nivoda.net
+/api/diamonds
 
-## Webhook examples
+GraphiQL: https://integrations.nivoda.net
+/api/diamonds-graphiql 
+
+To access the GraphiQL endpoint page, enter the following username and password:
+
+nivoda-api-docs
+nivoda-graphiql
+
+Here you can browse the API queries and mutations visually, and write & test the code to run against the staging and production endpoints too. 
+
+## Code Examples
+
+- Generic GraphQL Examples
+- Node.js Examples
+- React Examples
+- Java Examples
+- C# Examples
+
+Any questions? Please reach out to andre@nivoda.net (TBD change to itsupport@nivoda.net or something?) 
