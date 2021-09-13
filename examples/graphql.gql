@@ -8,6 +8,14 @@
   }
 }
 
+# To Test these in the GraphiQL Explorer, wrap the query or mutation with `as`, example:
+
+mutation($token:String!) {
+  as(token:$token) {
+    ... query
+  }
+}
+
 # Diamond Query
 
 ## Limit can be 50 maximum
@@ -51,11 +59,41 @@ query {
 
 # Create Request
 
+## Certificate number is a required parameter
+## Customer Order Number will show up on invoice if stone is purchased & delivered
 
+## Returns the ID of the created request.
+
+mutation {
+  create_request(
+    certificate_number: "42717505123",
+    lab: GIA,
+    comment:"Please confirm if NO BGM and eyeclean"
+    customer_order_number: "Ref 24-ZX",
+    create_order: true,
+    requested_info: [MEDIA]
+  )
+}
 
 # Create Order
 
+## IDs follow the structure of DIAMOND/diamond_id, eg DIAMOND/8bc1e15f-7086-489e-a79f-7e76a6063329
+
+## Returns the ID of the created order.
+
+mutation {
+  create_order(
+    items: [
+      {
+        offerId: "DIAMOND/8bc1e15f-7086-489e-a79f-7e76a6063329",
+        customer_order_number: "Ref 24-ZX",
+        customer_comment: "Please confirm if no black in table"
+      }
+    ]
+  )
+}
 
 
 # Create Hold - Coming Soon
+
 # Create Concierge Request - Coming Soon
