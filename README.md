@@ -41,7 +41,7 @@ GraphiQL: https://wdc-intg-customer-staging.herokuapp.com
 /api/diamonds-graphiql
 
 The staging username and password are:
-[TBD]
+[on request]
 
 **Production**
 Endpoint: https://integrations.nivoda.net
