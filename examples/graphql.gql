@@ -1,0 +1,61 @@
+# Receive the $token that you will need to use to call the API 
+
+{
+  authenticate{
+    username_and_password(username:"nivodaplatformemail@website.com", password:"nivodaplatformpassword") {
+      token
+    }
+  }
+}
+
+# Diamond Query
+
+## Limit can be 50 maximum
+## All other query optiones are documented in the GraphiQL explorer 
+
+query {
+  diamonds_by_query(
+    query: {
+      labgrown: false,
+      shapes: ["ROUND"],
+      sizes: [{ from: 1, to: 1.5}],
+      has_v360: true,
+      has_image: true,
+    },
+    offset: 0,
+    limit: 50, 
+    order: { type: price, direction: ASC }
+  ) {
+    items {
+      id
+      diamond {
+        id
+        video
+        image
+        availability
+        supplierStockId
+        certificate {
+          id
+          shape
+          certNumber
+          cut
+        }
+      }
+      price
+      discount
+    }
+    total_count
+  }
+}
+
+
+# Create Request
+
+
+
+# Create Order
+
+
+
+# Create Hold - Coming Soon
+# Create Concierge Request - Coming Soon
