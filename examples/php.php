@@ -1,3 +1,4 @@
+<?
 $url = 'http://wdc-intg-customer-staging.herokuapp.com/api/diamonds';
 
 // authenticate request
@@ -23,11 +24,11 @@ $token = $json['data']['username_and_password']['token'];
 
 // query request
 
-$query = 'query {
+$query = "query {
   diamonds_by_query(
     query: {
       labgrown: false,
-      shapes: ["ROUND"],
+      shapes: ['ROUND'],
       sizes: [{ from: 1, to: 1.5}],
       has_v360: true,
       has_image: true,
@@ -56,7 +57,7 @@ $query = 'query {
     total_count
   }
 }
-`;
+";
 
 $ch_query = curl_init();
 curl_setopt($ch_query, CURLOPT_URL, $url);
@@ -77,4 +78,5 @@ $json = json_decode($result_query, true);
 $results = $json['data']['diamonds_by_query'];
 
 var_dump($results['items']);
-echo $results['total_count']
+echo $results['total_count'];
+?>
