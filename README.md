@@ -52,7 +52,7 @@ GraphiQL: https://integrations.nivoda.net
 
 To access the GraphiQL endpoint page, enter the following username and password:
 
-nivoda-api-docs
+nivoda-api-docs <br />
 nivoda-graphiql
 
 Here you can browse the API queries and mutations visually, and write & test the code to run against the staging and production endpoints too. 
