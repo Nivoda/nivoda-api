@@ -59,10 +59,10 @@ Here you can browse the API queries and mutations visually, and write & test the
 
 ## Code Examples
 
+Code examples can be found in the examples folder.
+
 - Generic GraphQL Examples
 - Node.js Examples
-- React Examples
-- Java Examples
-- C# Examples
+- PHP Examples
 
-Any questions? Please reach out to andre@nivoda.net (TBD change to itsupport@nivoda.net or something?) 
+Any questions? Please reach out to andre at nivoda.net.
