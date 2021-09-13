@@ -54,7 +54,6 @@ let authenticate_query = `{
             video
             image
             availability
-            supplierStockId
             certificate {
               id
               shape
