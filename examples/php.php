@@ -3,11 +3,11 @@ $url = 'http://wdc-intg-customer-staging.herokuapp.com/api/diamonds';
 
 // authenticate request
 
-$authenticate = '{authenticate{username_and_password(username:"yourusername",password:"yourpassword"){token}}}';
+$authenticate = '{"query":"{authenticate{username_and_password(username:\"yourusername\",password:\"yourpassword\"){token}}}"}';
 
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL, $url);
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, 0);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($ch, CURLOPT_POSTFIELDS, $authenticate);
 curl_setopt($ch, CURLOPT_POST, 1);
 
@@ -20,7 +20,7 @@ $result = curl_exec($ch);
 curl_close($ch);
 
 $json = json_decode($result, true);
-$token = $json['data']['username_and_password']['token'];
+$token = $json["data"]["authenticate"]["username_and_password"]["token"];
 
 // query request
 
