@@ -22,60 +22,26 @@ curl_close($ch);
 $json = json_decode($result, true);
 $token = $json["data"]["authenticate"]["username_and_password"]["token"];
 
-// query request
+$query = '{"query":"query{diamonds_by_query(query:{labgrown:true}){total_count,items{id,price,diamond{video,certificate{certNumber}}}}}"}';
 
-$query = "query {
-  diamonds_by_query(
-    query: {
-      labgrown: false,
-      shapes: ['ROUND'],
-      sizes: [{ from: 1, to: 1.5}],
-      has_v360: true,
-      has_image: true,
-    },
-    offset: 0,
-    limit: 50, 
-    order: { type: price, direction: ASC }
-  ) {
-    items {
-      id
-      diamond {
-        id
-        video
-        image
-        availability
-        certificate {
-          id
-          shape
-          certNumber
-          cut
-        }
-      }
-      price
-      discount
-    }
-    total_count
-  }
-}
-";
+$headers_q = array();
+$headers_q[] = 'Content-Type: application/json';
+$headers_q[] = 'Authorization: Bearer '.$token;
 
 $ch_query = curl_init();
 curl_setopt($ch_query, CURLOPT_URL, $url);
-curl_setopt($ch_query, CURLOPT_RETURNTRANSFER, 0);
+curl_setopt($ch_query, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($ch_query, CURLOPT_POSTFIELDS, $query);
 curl_setopt($ch_query, CURLOPT_POST, 1);
-
-$headers_query = array();
-$headers_query['Content-Type'] = 'application/json';
-$headers_query['Authorization'] = "Bearer $token";
-curl_setopt($ch_query, CURLOPT_HTTPHEADER, $headers_query);
+curl_setopt($ch_query, CURLOPT_HTTPHEADER, $headers_q);
 
 $result_query = curl_exec($ch_query);
 
 curl_close($ch_query);
 
 $json = json_decode($result_query, true);
-$results = $json['data']['diamonds_by_query'];
+var_dump($json);
+$results = $json["data"]["diamonds_by_query"];
 
 var_dump($results['items']);
 echo $results['total_count'];
