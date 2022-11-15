@@ -45,8 +45,10 @@ let authenticate_query = `{
     mutation {
       create_hold(
         ProductId: "32cd4f24-4b24-4c13-9f5e-8d561aed3978", 
-        ProductType: "Diamond"
-      )
+        ProductType: Diamond
+      ) {
+        id
+      }
     }
   `;
 
