@@ -48,6 +48,8 @@ let authenticate_query = `{
         ProductType: Diamond
       ) {
         id
+        denied
+        until
       }
     }
   `;
