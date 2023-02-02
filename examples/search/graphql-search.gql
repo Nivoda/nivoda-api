@@ -29,6 +29,7 @@ query {
       sizes: [{ from: 1, to: 1.5}],
       has_v360: true,
       has_image: true,
+      color: [D,E],
     },
     offset: 0,
     limit: 50, 
@@ -41,11 +42,31 @@ query {
         video
         image
         availability
+        supplierStockId
+        brown
+        green
+        milky
+        eyeClean
+        mine_of_origin
         certificate {
           id
+          lab
           shape
           certNumber
           cut
+          carats
+          clarity
+          polish
+          symmetry
+          color
+          width
+          length
+          depth
+          girdle
+          floInt
+          floCol
+          depthPercentage
+          table
         }
       }
       price
@@ -91,8 +112,3 @@ mutation {
     ]
   )
 }
-
-
-# Create Hold - Coming Soon
-
-# Create Concierge Request - Coming Soon
