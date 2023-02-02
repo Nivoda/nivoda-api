@@ -55,6 +55,11 @@ nivoda-graphiql
 
 Here you can browse the API queries and mutations visually, and write & test the code to run against the staging and production endpoints too.
 
+## Authentication
+
+To authenticate against the production API, you need to use the same username and password that you use to login to the Nivoda platform. 
+For the staging environment, the username and password are shared on request. 
+
 ## Moving to Production
 
 Once you are ready to move to production, you can request your Account Manager / Technical Support and they will activate your production login. 
