@@ -48,7 +48,7 @@ let authenticate_query = `{
           sizes: [{ from: 1, to: 1.5}],
           has_v360: true,
           has_image: true,
-          color: ["D","E"],
+          color: [D,E]
         },
         offset: 0,
         limit: 50, 
