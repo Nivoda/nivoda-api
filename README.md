@@ -23,10 +23,6 @@ Videos and images are included where available.
 
 If you are a Nivoda API Pro user, you have the option to place orders, holds, diamond requests and concierge requests through the API.
 
-**Webhook Notifications**
-
-Receive webhook notifications of order updates & sold out stones.
-
 If you are interested in the Pro features, please reach out to your account manager.
 
 # Getting Started
@@ -57,9 +53,32 @@ nivoda-graphiql
 
 Here you can browse the API queries and mutations visually, and write & test the code to run against the staging and production endpoints too.
 
+## Moving to Production
+
+Once you are ready to move to production, you can request your Account Manager / Technical Support and they will activate your production login. 
+
+## General Concepts
+
+The API will return only the fields you request. The available fields can be viewed in the GraphiQL explorer. 
+
+For example, to get the size of a diamond, you can do:
+
+```
+diamond { 
+  id
+  certificate {
+    id
+    certNumber
+    carats # this is the size
+  }
+}
+```
+
+Once you parse the JSON response this will be available to you through an object, i.e. `diamond.certificate.carats` for Node.
+
 ## Code Examples
 
-Code examples can be found in the examples folder.
+Code examples can be found in the examples folder. The code examples contain the most commonly requested fields and filters.
 
 - Generic GraphQL Examples
 - Node.js Examples
