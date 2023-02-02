@@ -17,6 +17,8 @@ The API contains the same query capabilities as the Nivoda platform and mobile a
 
 Videos and images are included where available.
 
+The links returned in the API are customizable in height and width by changing the default 500/500 in the URL to whatever size you prefer.
+
 ## Pro Features
 
 **Automate requests and orders**
