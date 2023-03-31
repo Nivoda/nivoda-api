@@ -32,10 +32,10 @@ If you are interested in the Pro features, please reach out to your account mana
 ## Constants
 
 **Staging**
-Endpoint: https://wdc-intg-customer-staging.herokuapp.com
+Endpoint: https://intg-customer-staging.nivodaapi.net
 /api/diamonds
 
-GraphiQL: https://wdc-intg-customer-staging.herokuapp.com
+GraphiQL: https://intg-customer-staging.nivodaapi.net
 /api/diamonds-graphiql
 
 The staging username and password are:
